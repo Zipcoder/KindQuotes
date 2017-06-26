@@ -1,16 +1,13 @@
 package io.zipcoder.kindquotes.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Quote {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name="ID")
     private Long id;
 
@@ -27,6 +24,10 @@ public class Quote {
 
     public String getMessage() {
         return message;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setMessage(String message) {

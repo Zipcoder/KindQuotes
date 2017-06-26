@@ -3,6 +3,8 @@ import { NavController, ModalController } from 'ionic-angular';
 import {HomeService} from './homeService';
 import {Http} from '@angular/http';
 
+import { NewQuotePage } from '../new-quote/new-quote';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
@@ -13,17 +15,13 @@ export class HomePage {
   quotes: any;
    
   constructor(public navCtrl: NavController, 
-              public modalCtrl: ModalController,
               public homeService:HomeService) {
-    homeService.getAllQuotes().subscribe(data =>{
+    homeService.getAllQuotes().subscribe(data => {
       this.quotes = data;
     })
   }
 
-   openModal() {
-   let profileModal = this.modalCtrl.create(Profile, { userId: 8675309 });
-   profileModal.present();
- }
+  navigateToNewQuotePage() {
+    this.navCtrl.push(NewQuotePage);
+  }
 }
-
-@Component()
