@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NewQuoteService } from './new-quoteService';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the NewQuotePage page.
@@ -30,7 +31,7 @@ export class NewQuotePage {
   postNewQuote() {
     this.newQuoteService.addQuote(this.quote)
     .subscribe((data) => {
-      console.log(data);
+      this.navCtrl.push(HomePage);
     })
   }
 

@@ -4,6 +4,7 @@ import {HomeService} from './homeService';
 import {Http} from '@angular/http';
 
 import { NewQuotePage } from '../new-quote/new-quote';
+import { QuoteDetailPage } from '../quote-detail/quote-detail';
 
 @Component({
   selector: 'page-home',
@@ -23,5 +24,9 @@ export class HomePage {
 
   navigateToNewQuotePage() {
     this.navCtrl.push(NewQuotePage);
+  }
+
+  navigateToDetailPage(id: number) {
+    this.navCtrl.push(QuoteDetailPage, {id: id});
   }
 }

@@ -8,12 +8,14 @@ import {HttpModule} from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { NewQuotePage } from '../pages/new-quote/new-quote';
+import { QuoteDetailPage } from '../pages/quote-detail/quote-detail';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    NewQuotePage
+    NewQuotePage,
+    QuoteDetailPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -23,7 +25,8 @@ import { NewQuotePage } from '../pages/new-quote/new-quote';
   entryComponents: [
     MyApp,
     HomePage,
-    NewQuotePage
+    NewQuotePage,
+    QuoteDetailPage
 
   ],
   providers: [
