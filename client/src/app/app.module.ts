@@ -3,8 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import {HttpModule} from '@angular/http';
-
+import { HttpModule } from '@angular/http';
+import { HomeService } from '../pages/home/homeService';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
@@ -25,6 +25,7 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    HomeService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
