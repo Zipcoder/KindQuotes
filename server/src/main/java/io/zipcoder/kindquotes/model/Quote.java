@@ -1,33 +1,30 @@
 package io.zipcoder.kindquotes.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Quote {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "QUOTE_ID")
     private long id;
 
     @Column(name = "QUOTE_MESSAGE")
-    private String message;
+    private String string;
 
-    public Quote () { this.message = "default"; }
+    public Quote () {}
 
     public Quote(String msg){
-        this.message = msg;
+        this.string = msg;
     }
 
     public String getMessage() {
-        return message;
+        return string;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessage(String messages) {
+        this.string = messages;
     }
 
     public long getID() { return id; }

@@ -1,15 +1,22 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      (Wu Tang Clan) KindQuotes
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let quote of quotes">
-      <div>{{quote.message}}</div>
-    </ion-item>
+  <form [formGroup]="addedQuote" class="pure-form pure-form-stacked pure-form-aligned">
+      <ion-item>
+        <ion-label>Quote:</ion-label>
+        <ion-input type="text" formControlName="quote"></ion-input>
+      </ion-item>
+    <button ion-button type="submit" (click)="addQuote()">Add Quote</button>
+  </form>
+  <ion-list no-lines>
+    <button ion-item *ngFor="let quote of quotes" (click)="goToEditSheet()">
+      {{quote.message}}
+    </button>
   </ion-list>
 </ion-content>
