@@ -16,7 +16,9 @@ import { HomePage } from '../home/home';
 })
 export class QuoteDetailPage {
 
-  quote: any = ""
+  quote: any = "";
+  updating: Boolean = false;
+  updated: any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -35,7 +37,13 @@ export class QuoteDetailPage {
     })
   }
 
+  update() {
+    this.updating = true;
+  }
+
   updateQuote() {
+    this.quote.message = this.updated;
+    this.updating = false;
     this.detailService.updateQuote(this.quote)
     .subscribe(data => {
       this.quote = data;

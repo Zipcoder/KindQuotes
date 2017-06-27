@@ -14,8 +14,12 @@
 
 
 <ion-content padding>
-  <div>{{ quote.message }} </div>
+  <div>"{{ quote.message }}" </div>
   <button (click)="deleteQuote()" ion-button>Delete</button>
-  <button (click)="updateQuote()" ion-button>Update</button>
+  <button (click)="update()" ion-button>Update</button>
+  <div *ngIf="updating">
+    <ion-input type="text" [(ngModel)]="updated"></ion-input>
+    <button (click)="updateQuote()" ion-button>Submit</button>
+  </div>
 
 </ion-content>
