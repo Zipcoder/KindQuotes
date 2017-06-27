@@ -1,15 +1,17 @@
+
 <ion-header>
-  <ion-navbar>
+
     <ion-title>
-      Ionic Blank
+      KindQuote
     </ion-title>
-  </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
   <ion-list>
     <ion-item *ngFor="let quote of quotes">
-      <div>{{quote.message}}</div>
+      <div (click)="navigateToDetailPage(quote.id)">"{{quote.message}}"</div>
     </ion-item>
   </ion-list>
+  <button (click)="navigateToNewQuotePage()" ion-button>New Quote</button>
 </ion-content>
